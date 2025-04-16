@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini Message Board</title>
+  </head>
+  <body>
+    <h1>Mini Message Board</h1>
+    <a href="{% url 'new_message' %}">Add a new message</a>
+    <ul>
+      {% for msg in messages %}
+      <li>
+        <strong>{{ msg.user }}</strong>: {{ msg.text }} <br />
+        <em>{{ msg.added }}</em><br />
+        <a href="{% url 'message_detail' msg.id %}">Open</a>
+      </li>
+      {% empty %}
+      <li>No messages yet.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

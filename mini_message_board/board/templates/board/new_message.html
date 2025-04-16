@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Message</title>
+  </head>
+  <body>
+    <h1>Post a New Message</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <label>Your Name:</label><br />
+      <input type="text" name="user" required /><br /><br />
+      <label>Your Message:</label><br />
+      <textarea name="text" required></textarea><br /><br />
+      <button type="submit">Send</button>
+    </form>
+    <br />
+    <a href="{% url 'index' %}">Back to messages</a>
+  </body>
+</html>

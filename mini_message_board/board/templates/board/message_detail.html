@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Detail</title>
+  </head>
+  <body>
+    <h1>Message from {{ message.user }}</h1>
+    <p>{{ message.text }}</p>
+    <p><em>{{ message.added }}</em></p>
+    <a href="{% url 'index' %}">Back to all messages</a>
+  </body>
+</html>
